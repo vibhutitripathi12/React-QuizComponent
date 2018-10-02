@@ -9,27 +9,10 @@ class Quiz extends Component {
         super(props)
     } 
     render() {
+        const data = quizData.quiz_questions
         return (
-       <div><QuestionComponent/></div>
+       <div>{data[0].instruction_text}</div>
         );
     }
 }
-
-class QuestionComponent extends React.Component {
-    constructor(props){
-        super(props)
-    }
-    render() {
-        const data = quizData.quiz_questions
-        const questions = data.map((question) => 
-        <li>{question.instruction_text}</li>
-        );
-        return (
-            <div>
-                {questions}
-            </div>
-        )
-    }
-    }
-
 export default Quiz
